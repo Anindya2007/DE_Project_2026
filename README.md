@@ -20,14 +20,14 @@
 
 ## Team details (fill in before you start)
 
-| Role | Name | Enrollment No. | GitHub Username |
-|------|------|----------------|-----------------|
-| Group Lead | | | |
-| Member 2 | | | |
-| Member 3 | | | |
-| Member 4 | | | |
+| Role       | Name                   | Enrollment No.  | GitHub Username |
+|------      |------                  |---------------- |-----------------|
+| Group Lead | Anindya Sarkar         | 2501010058      | Anindya2007     |
+| Member 2   | Atharv Upadhyay        | 2501010102      | Atharv386       |
+| Member 3   | Badal Khandelwal       | 2501010111      | badalkhandelwal346-ai |
+| Member 4   | Anshika Srivastava     | 2501010071      | Soysauce69     |
 
-**Team No.:** ____ · **Section:** ____ · **Repository URL:** ____
+**Team No.:** T0145 · **Section:** A · **Repository URL:** https://github.com/badalkhandelwal346-ai/DE_Project_2026.git
 
 ---
 

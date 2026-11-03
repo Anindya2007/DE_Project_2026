@@ -1,0 +1,27 @@
+{
+  "team_number": "T0145",
+  "group_lead": {
+    "name": "Anindya Sarkar",
+    "enrollment_no": "2501010058",
+    "github": "Anindya2007"
+  },
+  "members": [
+    {
+      "name": "Atharv Upadhyay",
+      "enrollment_no": "2501010102",
+      "github": "Atharv386"
+    },
+    {
+      "name": "Badal Khandelwal",
+      "enrollment_no": "2501010111",
+      "github": "badalkhandelwal346-ai"
+    },
+    {
+      "name": "Anshika Srivastava",
+      "enrollment_no": "2501010071",
+      "github": "Soysauce69"
+    }
+  ],
+  "postgres_version": "",
+  "laptop_used_for_benchmarks": ""
+}

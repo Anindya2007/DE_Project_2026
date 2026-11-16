@@ -27,7 +27,7 @@
 | Member 3   | Badal Khandelwal       | 2501010111      | badalkhandelwal346-ai |
 | Member 4   | Anshika Srivastava     | 2501010071      | Soysauce69     |
 
-**Team No.:** T0145 · **Section:** A · **Repository URL:** https://github.com/badalkhandelwal346-ai/DE_Project_2026.git
+**Team No.:** T0145 · **Section:** A · **Repository URL:** https://github.com/Anindya2007/DE_Project_2026.git
 
 ---
 

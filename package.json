@@ -1,0 +1,27 @@
+{
+  "name": "dbms-instagram-social-media",
+  "version": "1.0.0",
+  "description": "**Course:** Database Management Systems · **Year:** B.Tech 2nd year · **Team size:** 4 **Database:** PostgreSQL 15 or newer · **Final submission:** Mon 23 Nov 2026 **Topics used:** Data types & constraints · Keys & relationships · Normalization · Query execution plans · Indexing · Query optimization · VACUUM/ANALYZE · Partitioning & sharding",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Anindya2007/DE_Project_2026.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Anindya2007/DE_Project_2026/issues"
+  },
+  "homepage": "https://github.com/Anindya2007/DE_Project_2026#readme",
+  "dependencies": {
+    "@prisma/client": "^6.19.3",
+    "prisma": "^6.19.3"
+  }
+}

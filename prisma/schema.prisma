@@ -1,0 +1,141 @@
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["multiSchema"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+  schemas  = ["instagram"]
+}
+
+/// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
+model comments {
+  comment_id        BigInt     @id
+  post_id           BigInt
+  user_id           Int
+  parent_comment_id BigInt?
+  body              String
+  is_hidden         Boolean    @default(false)
+  created_at        DateTime   @db.Timestamptz(6)
+  comments          comments?  @relation("commentsTocomments", fields: [parent_comment_id], references: [comment_id], onDelete: Cascade, onUpdate: NoAction, map: "fk_comments_parent")
+  other_comments    comments[] @relation("commentsTocomments")
+  posts             posts      @relation(fields: [post_id], references: [post_id], onDelete: Cascade, onUpdate: NoAction, map: "fk_comments_post")
+  users             users      @relation(fields: [user_id], references: [user_id], onDelete: Cascade, onUpdate: NoAction, map: "fk_comments_user")
+
+  @@schema("instagram")
+}
+
+/// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
+model follows {
+  follower_id                      Int
+  followee_id                      Int
+  status                           String   @default("PENDING") @db.VarChar(20)
+  created_at                       DateTime @db.Timestamptz(6)
+  users_follows_followee_idTousers users    @relation("follows_followee_idTousers", fields: [followee_id], references: [user_id], onDelete: Cascade, onUpdate: NoAction, map: "fk_follows_followee")
+  users_follows_follower_idTousers users    @relation("follows_follower_idTousers", fields: [follower_id], references: [user_id], onDelete: Cascade, onUpdate: NoAction, map: "fk_follows_follower")
+
+  @@id([follower_id, followee_id])
+  @@schema("instagram")
+}
+
+/// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
+model hashtags {
+  hashtag_id    Int             @id
+  tag           String          @unique(map: "uq_hashtags_tag") @db.VarChar(50)
+  post_hashtags post_hashtags[]
+
+  @@schema("instagram")
+}
+
+model likes {
+  user_id    Int
+  post_id    BigInt
+  created_at DateTime @db.Timestamptz(6)
+  posts      posts    @relation(fields: [post_id], references: [post_id], onDelete: Cascade, onUpdate: NoAction, map: "fk_likes_post")
+  users      users    @relation(fields: [user_id], references: [user_id], onDelete: Cascade, onUpdate: NoAction, map: "fk_likes_user")
+
+  @@id([user_id, post_id])
+  @@schema("instagram")
+}
+
+model post_hashtags {
+  post_id    BigInt
+  hashtag_id Int
+  hashtags   hashtags @relation(fields: [hashtag_id], references: [hashtag_id], onDelete: Cascade, onUpdate: NoAction, map: "fk_post_hashtags_hashtag")
+  posts      posts    @relation(fields: [post_id], references: [post_id], onDelete: Cascade, onUpdate: NoAction, map: "fk_post_hashtags_post")
+
+  @@id([post_id, hashtag_id])
+  @@schema("instagram")
+}
+
+/// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
+model post_media {
+  post_id      BigInt
+  position     Int      @db.SmallInt
+  media_type   String   @db.VarChar(20)
+  media_url    String
+  width        Int
+  height       Int
+  duration_sec Decimal? @db.Decimal(5, 1)
+  posts        posts    @relation(fields: [post_id], references: [post_id], onDelete: Cascade, onUpdate: NoAction, map: "fk_post_media_post")
+
+  @@id([post_id, position])
+  @@schema("instagram")
+}
+
+/// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
+model posts {
+  post_id       BigInt          @id
+  user_id       Int
+  post_type     String          @db.VarChar(20)
+  caption       String?
+  location_name String?         @db.VarChar(100)
+  like_count    Int             @default(0)
+  comment_count Int             @default(0)
+  is_archived   Boolean         @default(false)
+  created_at    DateTime        @db.Timestamptz(6)
+  comments      comments[]
+  likes         likes[]
+  post_hashtags post_hashtags[]
+  post_media    post_media[]
+  users         users           @relation(fields: [user_id], references: [user_id], onDelete: Cascade, onUpdate: NoAction, map: "fk_posts_user")
+
+  @@schema("instagram")
+}
+
+/// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
+model stories {
+  story_id   BigInt   @id
+  user_id    Int
+  media_type String   @db.VarChar(20)
+  created_at DateTime @db.Timestamptz(6)
+  expires_at DateTime @db.Timestamptz(6)
+  view_count Int      @default(0)
+  users      users    @relation(fields: [user_id], references: [user_id], onDelete: Cascade, onUpdate: NoAction, map: "fk_stories_user")
+
+  @@schema("instagram")
+}
+
+/// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
+model users {
+  user_id                            Int        @id
+  username                           String     @unique(map: "uq_users_username") @db.VarChar(50)
+  full_name                          String     @db.VarChar(100)
+  email                              String     @unique(map: "uq_users_email") @db.VarChar(255)
+  bio                                String?
+  account_type                       String     @db.VarChar(20)
+  is_private                         Boolean    @default(false)
+  is_verified                        Boolean    @default(false)
+  followers_count                    Int        @default(0)
+  following_count                    Int        @default(0)
+  created_at                         DateTime   @db.Timestamptz(6)
+  comments                           comments[]
+  follows_follows_followee_idTousers follows[]  @relation("follows_followee_idTousers")
+  follows_follows_follower_idTousers follows[]  @relation("follows_follower_idTousers")
+  likes                              likes[]
+  posts                              posts[]
+  stories                            stories[]
+
+  @@schema("instagram")
+}

@@ -7,7 +7,7 @@ Project Name: Instagram Social Media Database
 Course: Database Management Systems (DBMS)
 
 Project Repository:
-https://github.com/badalkhandelwal346-ai/DE_Project_2026
+https://github.com/Anindya2007/DE_Project_2026.git
 
 Team Number: T0145
 
@@ -247,7 +247,7 @@ The CP2 baseline must represent the original database configuration.
 
 Repository:
 
-https://github.com/badalkhandelwal346-ai/DE_Project_2026
+https://github.com/Anindya2007/DE_Project_2026.git
 
 Default working branch: main.
 

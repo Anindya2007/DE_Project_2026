@@ -1,0 +1,57 @@
+=== R24 run 1 ===
+Limit  (cost=984.65..984.70 rows=20 width=20) (actual time=2.501..2.503 rows=20.00 loops=1)
+  Buffers: shared hit=396
+  ->  Sort  (cost=984.65..989.81 rows=2066 width=20) (actual time=2.500..2.501 rows=20.00 loops=1)
+        Sort Key: (sum(view_count)) DESC
+        Sort Method: top-N heapsort  Memory: 27kB
+        Buffers: shared hit=396
+        ->  HashAggregate  (cost=909.01..929.67 rows=2066 width=20) (actual time=2.096..2.306 rows=2004.00 loops=1)
+              Group Key: user_id
+              Batches: 1  Memory Usage: 217kB
+              Buffers: shared hit=393
+              ->  Seq Scan on stories  (cost=0.00..893.00 rows=2135 width=8) (actual time=1.557..1.739 rows=2181.00 loops=1)
+                    Filter: (created_at >= '2026-06-01 00:00:00+00'::timestamp with time zone)
+                    Rows Removed by Filter: 37819
+                    Buffers: shared hit=393
+Planning:
+  Buffers: shared hit=97
+Planning Time: 0.242 ms
+Execution Time: 2.605 ms
+=== R24 run 2 ===
+Limit  (cost=984.65..984.70 rows=20 width=20) (actual time=2.485..2.488 rows=20.00 loops=1)
+  Buffers: shared hit=396
+  ->  Sort  (cost=984.65..989.81 rows=2066 width=20) (actual time=2.484..2.486 rows=20.00 loops=1)
+        Sort Key: (sum(view_count)) DESC
+        Sort Method: top-N heapsort  Memory: 27kB
+        Buffers: shared hit=396
+        ->  HashAggregate  (cost=909.01..929.67 rows=2066 width=20) (actual time=2.077..2.288 rows=2004.00 loops=1)
+              Group Key: user_id
+              Batches: 1  Memory Usage: 217kB
+              Buffers: shared hit=393
+              ->  Seq Scan on stories  (cost=0.00..893.00 rows=2135 width=8) (actual time=1.529..1.707 rows=2181.00 loops=1)
+                    Filter: (created_at >= '2026-06-01 00:00:00+00'::timestamp with time zone)
+                    Rows Removed by Filter: 37819
+                    Buffers: shared hit=393
+Planning:
+  Buffers: shared hit=97
+Planning Time: 0.440 ms
+Execution Time: 2.604 ms
+=== R24 run 3 ===
+Limit  (cost=984.65..984.70 rows=20 width=20) (actual time=2.484..2.487 rows=20.00 loops=1)
+  Buffers: shared hit=396
+  ->  Sort  (cost=984.65..989.81 rows=2066 width=20) (actual time=2.483..2.484 rows=20.00 loops=1)
+        Sort Key: (sum(view_count)) DESC
+        Sort Method: top-N heapsort  Memory: 27kB
+        Buffers: shared hit=396
+        ->  HashAggregate  (cost=909.01..929.67 rows=2066 width=20) (actual time=2.078..2.289 rows=2004.00 loops=1)
+              Group Key: user_id
+              Batches: 1  Memory Usage: 217kB
+              Buffers: shared hit=393
+              ->  Seq Scan on stories  (cost=0.00..893.00 rows=2135 width=8) (actual time=1.537..1.717 rows=2181.00 loops=1)
+                    Filter: (created_at >= '2026-06-01 00:00:00+00'::timestamp with time zone)
+                    Rows Removed by Filter: 37819
+                    Buffers: shared hit=393
+Planning:
+  Buffers: shared hit=97
+Planning Time: 0.241 ms
+Execution Time: 2.589 ms

@@ -1,0 +1,45 @@
+=== R06 run 1 ===
+Limit  (cost=984.30..984.35 rows=20 width=37) (actual time=8.591..8.594 rows=20.00 loops=1)
+  Buffers: shared hit=510
+  ->  Sort  (cost=984.30..987.34 rows=1214 width=37) (actual time=8.590..8.591 rows=20.00 loops=1)
+        Sort Key: is_verified DESC, followers_count DESC
+        Sort Method: top-N heapsort  Memory: 26kB
+        Buffers: shared hit=510
+        ->  Seq Scan on users  (cost=0.00..952.00 rows=1214 width=37) (actual time=0.016..8.363 rows=1200.00 loops=1)
+              Filter: (((username)::text ~~* 'karan%'::text) OR ((full_name)::text ~~* '%karan sharma%'::text))
+              Rows Removed by Filter: 28800
+              Buffers: shared hit=502
+Planning:
+  Buffers: shared hit=131
+Planning Time: 0.332 ms
+Execution Time: 8.648 ms
+=== R06 run 2 ===
+Limit  (cost=984.30..984.35 rows=20 width=37) (actual time=15.396..15.399 rows=20.00 loops=1)
+  Buffers: shared hit=510
+  ->  Sort  (cost=984.30..987.34 rows=1214 width=37) (actual time=15.395..15.396 rows=20.00 loops=1)
+        Sort Key: is_verified DESC, followers_count DESC
+        Sort Method: top-N heapsort  Memory: 26kB
+        Buffers: shared hit=510
+        ->  Seq Scan on users  (cost=0.00..952.00 rows=1214 width=37) (actual time=0.013..15.176 rows=1200.00 loops=1)
+              Filter: (((username)::text ~~* 'karan%'::text) OR ((full_name)::text ~~* '%karan sharma%'::text))
+              Rows Removed by Filter: 28800
+              Buffers: shared hit=502
+Planning:
+  Buffers: shared hit=131
+Planning Time: 0.315 ms
+Execution Time: 15.455 ms
+=== R06 run 3 ===
+Limit  (cost=984.30..984.35 rows=20 width=37) (actual time=8.638..8.641 rows=20.00 loops=1)
+  Buffers: shared hit=510
+  ->  Sort  (cost=984.30..987.34 rows=1214 width=37) (actual time=8.637..8.638 rows=20.00 loops=1)
+        Sort Key: is_verified DESC, followers_count DESC
+        Sort Method: top-N heapsort  Memory: 26kB
+        Buffers: shared hit=510
+        ->  Seq Scan on users  (cost=0.00..952.00 rows=1214 width=37) (actual time=0.012..8.425 rows=1200.00 loops=1)
+              Filter: (((username)::text ~~* 'karan%'::text) OR ((full_name)::text ~~* '%karan sharma%'::text))
+              Rows Removed by Filter: 28800
+              Buffers: shared hit=502
+Planning:
+  Buffers: shared hit=131
+Planning Time: 0.320 ms
+Execution Time: 8.696 ms

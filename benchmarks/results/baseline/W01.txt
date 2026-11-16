@@ -1,0 +1,27 @@
+=== W01 run 1 ===
+Insert on posts  (cost=0.00..0.01 rows=0 width=0) (actual time=0.139..0.139 rows=0.00 loops=1)
+  Buffers: shared hit=50 dirtied=2
+  ->  Result  (cost=0.00..0.01 rows=1 width=337) (actual time=0.001..0.001 rows=1.00 loops=1)
+Planning:
+  Buffers: shared hit=3
+Planning Time: 0.057 ms
+Trigger for constraint fk_posts_user: time=0.380 calls=1
+Execution Time: 0.573 ms
+=== W01 run 2 ===
+Insert on posts  (cost=0.00..0.01 rows=0 width=0) (actual time=0.159..0.159 rows=0.00 loops=1)
+  Buffers: shared hit=51 dirtied=1
+  ->  Result  (cost=0.00..0.01 rows=1 width=337) (actual time=0.001..0.001 rows=1.00 loops=1)
+Planning:
+  Buffers: shared hit=3
+Planning Time: 0.054 ms
+Trigger for constraint fk_posts_user: time=0.376 calls=1
+Execution Time: 0.586 ms
+=== W01 run 3 ===
+Insert on posts  (cost=0.00..0.01 rows=0 width=0) (actual time=0.154..0.155 rows=0.00 loops=1)
+  Buffers: shared hit=51
+  ->  Result  (cost=0.00..0.01 rows=1 width=337) (actual time=0.001..0.001 rows=1.00 loops=1)
+Planning:
+  Buffers: shared hit=3
+Planning Time: 0.059 ms
+Trigger for constraint fk_posts_user: time=0.394 calls=1
+Execution Time: 0.605 ms

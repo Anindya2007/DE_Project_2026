@@ -1,0 +1,45 @@
+=== R02 run 1 ===
+Limit  (cost=1551.02..1551.03 rows=3 width=30) (actual time=3.524..3.527 rows=11.00 loops=1)
+  Buffers: shared hit=804
+  ->  Sort  (cost=1551.02..1551.03 rows=3 width=30) (actual time=3.523..3.524 rows=11.00 loops=1)
+        Sort Key: created_at DESC
+        Sort Method: quicksort  Memory: 25kB
+        Buffers: shared hit=804
+        ->  Seq Scan on posts  (cost=0.00..1551.00 rows=3 width=30) (actual time=1.065..3.506 rows=11.00 loops=1)
+              Filter: ((NOT is_archived) AND (user_id = 217))
+              Rows Removed by Filter: 59989
+              Buffers: shared hit=801
+Planning:
+  Buffers: shared hit=103
+Planning Time: 0.236 ms
+Execution Time: 3.598 ms
+=== R02 run 2 ===
+Limit  (cost=1551.02..1551.03 rows=3 width=30) (actual time=3.693..3.696 rows=11.00 loops=1)
+  Buffers: shared hit=804
+  ->  Sort  (cost=1551.02..1551.03 rows=3 width=30) (actual time=3.692..3.693 rows=11.00 loops=1)
+        Sort Key: created_at DESC
+        Sort Method: quicksort  Memory: 25kB
+        Buffers: shared hit=804
+        ->  Seq Scan on posts  (cost=0.00..1551.00 rows=3 width=30) (actual time=1.054..3.675 rows=11.00 loops=1)
+              Filter: ((NOT is_archived) AND (user_id = 217))
+              Rows Removed by Filter: 59989
+              Buffers: shared hit=801
+Planning:
+  Buffers: shared hit=103
+Planning Time: 0.237 ms
+Execution Time: 3.766 ms
+=== R02 run 3 ===
+Limit  (cost=1551.02..1551.03 rows=3 width=30) (actual time=3.603..3.606 rows=11.00 loops=1)
+  Buffers: shared hit=804
+  ->  Sort  (cost=1551.02..1551.03 rows=3 width=30) (actual time=3.602..3.603 rows=11.00 loops=1)
+        Sort Key: created_at DESC
+        Sort Method: quicksort  Memory: 25kB
+        Buffers: shared hit=804
+        ->  Seq Scan on posts  (cost=0.00..1551.00 rows=3 width=30) (actual time=1.115..3.586 rows=11.00 loops=1)
+              Filter: ((NOT is_archived) AND (user_id = 217))
+              Rows Removed by Filter: 59989
+              Buffers: shared hit=801
+Planning:
+  Buffers: shared hit=103
+Planning Time: 0.240 ms
+Execution Time: 3.677 ms

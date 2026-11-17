@@ -508,7 +508,14 @@ Based on PostgreSQL query planner cost modeling and the Phase 2 schema design, w
 
 ## 6. Official 30-Query Baseline Timing Table
 
-The table below reflects the standardized CP2 evaluation format. All timing values and observed scan nodes are maintained via the automated ingestion script `benchmarks/analyze_baseline.py`.
+### 6.1 Specification & Measurement Standards
+The table below establishes the standardized CP2 baseline evaluation matrix. In compliance with course specifications (`README.md` §3.2 and `CHECKPOINTS.md` §3):
+- Every query is timed across **three consecutive executions** (`Run 1`, `Run 2`, `Run 3`) using `EXPLAIN (ANALYZE, BUFFERS)`.
+- The primary evaluation metric is the **arithmetic average** across the three runs:
+  $$\text{Average Execution Time (ms)} = \frac{T_{\text{Run 1}} + T_{\text{Run 2}} + T_{\text{Run 3}}}{3}$$
+- In addition, the **median** ($T_{\text{median}}$), **minimum** ($T_{\text{min}}$), and **maximum** ($T_{\text{max}}$) latencies are recorded to observe cache warming effects and tail variance.
+- Observed relational scan nodes (e.g. `Seq Scan`, `Index Scan`, `Index Only Scan`) are cataloged from the execution plans.
+- Data synchronization is managed programmatically via `benchmarks/analyze_baseline.py`.
 
 <!-- BENCHMARK_TABLE_START -->
 | Query | Type | Run 1 (ms) | Run 2 (ms) | Run 3 (ms) | Average (ms) | Median (ms) | Min (ms) | Max (ms) | Scan Type |

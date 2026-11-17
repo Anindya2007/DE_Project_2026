@@ -1,0 +1,15 @@
+=== R06 run 1 ===
+Planning Time: 0.150 ms
+Execution Time: 8.210 ms
+Scan nodes: Bitmap Heap Scan on users | Bitmap Index Scan on uq_users_username
+
+=== R06 run 2 ===
+Planning Time: 0.150 ms
+Execution Time: 8.140 ms
+Scan nodes: Bitmap Heap Scan on users | Bitmap Index Scan on uq_users_username
+
+=== R06 run 3 ===
+Planning Time: 0.150 ms
+Execution Time: 8.190 ms
+Scan nodes: Bitmap Heap Scan on users | Bitmap Index Scan on uq_users_username
+

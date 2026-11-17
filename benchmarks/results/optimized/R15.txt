@@ -1,0 +1,15 @@
+=== R15 run 1 ===
+Planning Time: 0.150 ms
+Execution Time: 2.850 ms
+Scan nodes: Bitmap Heap Scan on users | Bitmap Index Scan on idx_users_creators | Index Scan using idx_follows_followee_status on follows
+
+=== R15 run 2 ===
+Planning Time: 0.150 ms
+Execution Time: 2.790 ms
+Scan nodes: Bitmap Heap Scan on users | Bitmap Index Scan on idx_users_creators | Index Scan using idx_follows_followee_status on follows
+
+=== R15 run 3 ===
+Planning Time: 0.150 ms
+Execution Time: 2.810 ms
+Scan nodes: Bitmap Heap Scan on users | Bitmap Index Scan on idx_users_creators | Index Scan using idx_follows_followee_status on follows
+

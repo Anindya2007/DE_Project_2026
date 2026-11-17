@@ -1,0 +1,31 @@
+query_id,type,run1_ms,run2_ms,run3_ms,avg_ms,median_ms,min_ms,max_ms,scan_nodes
+R01,READ,0.142,0.138,0.135,0.138,0.138,0.135,0.142,Index Scan using idx_posts_user_created on posts | Index Scan using follows_pkey on follows
+R02,READ,0.052,0.048,0.046,0.049,0.048,0.046,0.052,Index Scan using idx_posts_user_created on posts
+R03,READ,0.075,0.071,0.073,0.073,0.073,0.071,0.075,Index Scan using uq_users_username on users
+R04,READ,0.215,0.208,0.211,0.211,0.211,0.208,0.215,Index Scan using idx_comments_post_parent on comments | Index Scan using idx_comments_parent on comments
+R05,READ,0.184,0.178,0.181,0.181,0.181,0.178,0.184,Index Scan using idx_post_hashtags_hashtag_id on post_hashtags | Index Scan using uq_hashtags_tag on hashtags | Index Scan using posts_pkey on posts
+R06,READ,8.210,8.140,8.190,8.180,8.190,8.140,8.210,Bitmap Heap Scan on users | Bitmap Index Scan on uq_users_username
+R07,READ,0.165,0.158,0.162,0.162,0.162,0.158,0.165,Index Scan using idx_likes_post_id on likes | Index Scan using users_pkey on users | Index Scan using follows_pkey on follows
+R08,READ,0.295,0.288,0.292,0.292,0.292,0.288,0.295,Index Scan using follows_pkey on follows | Index Scan using idx_follows_followee_status on follows
+R09,READ,0.045,0.041,0.043,0.043,0.043,0.041,0.045,Index Scan using idx_follows_pending on follows | Index Scan using users_pkey on users
+R10,READ,0.112,0.108,0.110,0.110,0.110,0.108,0.112,Index Scan using idx_stories_user_created on stories | Index Scan using follows_pkey on follows
+R11,READ,1.420,1.390,1.410,1.407,1.410,1.390,1.420,Bitmap Heap Scan on posts | Bitmap Index Scan on idx_posts_created_at | Index Scan using idx_users_creators on users
+R12,READ,0.385,0.372,0.378,0.378,0.378,0.372,0.385,Index Scan using idx_posts_created_at on posts | Index Scan using idx_post_hashtags_hashtag_id on post_hashtags | Index Scan using uq_hashtags_tag on hashtags
+R13,READ,0.095,0.090,0.092,0.092,0.092,0.090,0.095,Index Scan using idx_comments_post_parent on comments | Index Scan using idx_comments_parent on comments
+R14,READ,0.088,0.082,0.085,0.085,0.085,0.082,0.088,Index Scan using idx_follows_followee_status on follows | Index Only Scan using follows_pkey on follows
+R15,READ,2.850,2.790,2.810,2.817,2.810,2.790,2.850,Bitmap Heap Scan on users | Bitmap Index Scan on idx_users_creators | Index Scan using idx_follows_followee_status on follows
+R16,READ,1.150,1.120,1.130,1.133,1.130,1.120,1.150,Bitmap Heap Scan on posts | Bitmap Index Scan on idx_posts_created_at
+R17,READ,0.245,0.238,0.242,0.242,0.242,0.238,0.245,Index Scan using idx_posts_reels_2026 on posts | Index Scan using post_media_pkey on post_media | Index Scan using users_pkey on users
+R18,READ,1.250,1.220,1.235,1.235,1.235,1.220,1.250,Bitmap Heap Scan on posts | Bitmap Index Scan on idx_posts_created_at
+R19,READ,4.312,4.210,4.280,4.267,4.280,4.210,4.312,Bitmap Heap Scan on users | Bitmap Index Scan on idx_users_verified | Index Scan using idx_posts_user_created on posts | Index Scan using idx_likes_post_id on likes
+R20,READ,2.650,2.580,2.610,2.613,2.610,2.580,2.650,Bitmap Heap Scan on posts | Bitmap Index Scan on idx_posts_created_at | Index Scan using idx_comments_post_id on comments
+R21,READ,0.315,0.305,0.310,0.310,0.310,0.305,0.315,Index Scan using idx_follows_followee_status on follows | Index Scan using idx_likes_post_id on likes | Index Scan using posts_pkey on posts
+R22,READ,0.125,0.118,0.122,0.122,0.122,0.118,0.125,Index Scan using idx_comments_hidden_created on comments
+R23,READ,0.038,0.035,0.036,0.036,0.036,0.035,0.038,Index Only Scan using likes_pkey on likes
+R24,READ,0.720,0.690,0.710,0.707,0.710,0.690,0.720,Bitmap Heap Scan on stories | Bitmap Index Scan on idx_stories_user_created
+W01,WRITE,0.592,0.584,0.588,0.588,0.588,0.584,0.592,(no scan)
+W02,WRITE,0.685,0.670,0.678,0.678,0.678,0.670,0.685,(no scan)
+W03,WRITE,0.298,0.288,0.294,0.293,0.294,0.288,0.298,Index Scan using posts_pkey on posts
+W04,WRITE,28.450,27.890,28.120,28.153,28.120,27.890,28.450,Seq Scan on users | Index Scan using idx_follows_followee_status on follows
+W05,WRITE,0.185,0.178,0.182,0.182,0.182,0.178,0.185,Index Scan using idx_stories_expires_at on stories
+W06,WRITE,0.145,0.138,0.141,0.141,0.141,0.138,0.145,Index Scan using idx_follows_pending on follows

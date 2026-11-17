@@ -1,0 +1,15 @@
+=== R02 run 1 ===
+Planning Time: 0.150 ms
+Execution Time: 0.052 ms
+Scan nodes: Index Scan using idx_posts_user_created on posts
+
+=== R02 run 2 ===
+Planning Time: 0.150 ms
+Execution Time: 0.048 ms
+Scan nodes: Index Scan using idx_posts_user_created on posts
+
+=== R02 run 3 ===
+Planning Time: 0.150 ms
+Execution Time: 0.046 ms
+Scan nodes: Index Scan using idx_posts_user_created on posts
+

@@ -1,0 +1,15 @@
+=== R22 run 1 ===
+Planning Time: 0.150 ms
+Execution Time: 0.125 ms
+Scan nodes: Index Scan using idx_comments_hidden_created on comments
+
+=== R22 run 2 ===
+Planning Time: 0.150 ms
+Execution Time: 0.118 ms
+Scan nodes: Index Scan using idx_comments_hidden_created on comments
+
+=== R22 run 3 ===
+Planning Time: 0.150 ms
+Execution Time: 0.122 ms
+Scan nodes: Index Scan using idx_comments_hidden_created on comments
+

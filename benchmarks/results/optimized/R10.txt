@@ -1,0 +1,15 @@
+=== R10 run 1 ===
+Planning Time: 0.150 ms
+Execution Time: 0.112 ms
+Scan nodes: Index Scan using idx_stories_user_created on stories | Index Scan using follows_pkey on follows
+
+=== R10 run 2 ===
+Planning Time: 0.150 ms
+Execution Time: 0.108 ms
+Scan nodes: Index Scan using idx_stories_user_created on stories | Index Scan using follows_pkey on follows
+
+=== R10 run 3 ===
+Planning Time: 0.150 ms
+Execution Time: 0.110 ms
+Scan nodes: Index Scan using idx_stories_user_created on stories | Index Scan using follows_pkey on follows
+

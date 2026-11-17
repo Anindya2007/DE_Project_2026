@@ -1,0 +1,15 @@
+=== R03 run 1 ===
+Planning Time: 0.150 ms
+Execution Time: 0.075 ms
+Scan nodes: Index Scan using uq_users_username on users
+
+=== R03 run 2 ===
+Planning Time: 0.150 ms
+Execution Time: 0.071 ms
+Scan nodes: Index Scan using uq_users_username on users
+
+=== R03 run 3 ===
+Planning Time: 0.150 ms
+Execution Time: 0.073 ms
+Scan nodes: Index Scan using uq_users_username on users
+

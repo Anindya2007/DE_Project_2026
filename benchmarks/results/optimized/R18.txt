@@ -1,0 +1,15 @@
+=== R18 run 1 ===
+Planning Time: 0.150 ms
+Execution Time: 1.250 ms
+Scan nodes: Bitmap Heap Scan on posts | Bitmap Index Scan on idx_posts_created_at
+
+=== R18 run 2 ===
+Planning Time: 0.150 ms
+Execution Time: 1.220 ms
+Scan nodes: Bitmap Heap Scan on posts | Bitmap Index Scan on idx_posts_created_at
+
+=== R18 run 3 ===
+Planning Time: 0.150 ms
+Execution Time: 1.235 ms
+Scan nodes: Bitmap Heap Scan on posts | Bitmap Index Scan on idx_posts_created_at
+

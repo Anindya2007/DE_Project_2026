@@ -1,0 +1,15 @@
+=== R13 run 1 ===
+Planning Time: 0.150 ms
+Execution Time: 0.095 ms
+Scan nodes: Index Scan using idx_comments_post_parent on comments | Index Scan using idx_comments_parent on comments
+
+=== R13 run 2 ===
+Planning Time: 0.150 ms
+Execution Time: 0.090 ms
+Scan nodes: Index Scan using idx_comments_post_parent on comments | Index Scan using idx_comments_parent on comments
+
+=== R13 run 3 ===
+Planning Time: 0.150 ms
+Execution Time: 0.092 ms
+Scan nodes: Index Scan using idx_comments_post_parent on comments | Index Scan using idx_comments_parent on comments
+

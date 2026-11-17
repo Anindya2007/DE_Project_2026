@@ -1,0 +1,15 @@
+=== R01 run 1 ===
+Planning Time: 0.150 ms
+Execution Time: 0.142 ms
+Scan nodes: Index Scan using idx_posts_user_created on posts | Index Scan using follows_pkey on follows
+
+=== R01 run 2 ===
+Planning Time: 0.150 ms
+Execution Time: 0.138 ms
+Scan nodes: Index Scan using idx_posts_user_created on posts | Index Scan using follows_pkey on follows
+
+=== R01 run 3 ===
+Planning Time: 0.150 ms
+Execution Time: 0.135 ms
+Scan nodes: Index Scan using idx_posts_user_created on posts | Index Scan using follows_pkey on follows
+

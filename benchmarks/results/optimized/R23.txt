@@ -1,0 +1,15 @@
+=== R23 run 1 ===
+Planning Time: 0.150 ms
+Execution Time: 0.038 ms
+Scan nodes: Index Only Scan using likes_pkey on likes
+
+=== R23 run 2 ===
+Planning Time: 0.150 ms
+Execution Time: 0.035 ms
+Scan nodes: Index Only Scan using likes_pkey on likes
+
+=== R23 run 3 ===
+Planning Time: 0.150 ms
+Execution Time: 0.036 ms
+Scan nodes: Index Only Scan using likes_pkey on likes
+

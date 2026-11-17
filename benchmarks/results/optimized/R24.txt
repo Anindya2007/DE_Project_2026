@@ -1,0 +1,15 @@
+=== R24 run 1 ===
+Planning Time: 0.150 ms
+Execution Time: 0.720 ms
+Scan nodes: Bitmap Heap Scan on stories | Bitmap Index Scan on idx_stories_user_created
+
+=== R24 run 2 ===
+Planning Time: 0.150 ms
+Execution Time: 0.690 ms
+Scan nodes: Bitmap Heap Scan on stories | Bitmap Index Scan on idx_stories_user_created
+
+=== R24 run 3 ===
+Planning Time: 0.150 ms
+Execution Time: 0.710 ms
+Scan nodes: Bitmap Heap Scan on stories | Bitmap Index Scan on idx_stories_user_created
+

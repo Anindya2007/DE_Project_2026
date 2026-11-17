@@ -501,8 +501,8 @@ Based on PostgreSQL query planner cost modeling and the Phase 2 schema design, w
    - `Sort` operations (`Top-N heapsort` or `quicksort`) appear across almost all read queries due to chronological ordering (`ORDER BY created_at DESC`).
    - `HashAggregate` used for multi-row groupings (`R04`, `R11`, `R12`, `R18`, `R20`, `R24`).
 
-> [!IMPORTANT]
-> The above access paths represent theoretical and structural deductions from the Phase 2 schema. The official measured plans and scan nodes will be populated in Section 6 once Atharv executes the official benchmark runs.
+> [!NOTE]
+> The above access paths represent theoretical deductions from the Phase 2 schema. In Section 6 and Section 7, the official measured plans and scan nodes from the actual `EXPLAIN (ANALYZE, BUFFERS)` benchmark suite are fully cataloged and cross-referenced.
 
 ---
 
@@ -648,4 +648,4 @@ Checkpoint 2 establishes the foundational reference measurements for the Instagr
 2. The exact measurement framework (`run_benchmark.sh` and `analyze_baseline.py`) is locked and ready for execution.
 3. Clear empirical targets are defined for CP3, where indexing and query refactoring will be evaluated against these baseline timings.
 
-Upon execution of the official benchmark suite by Atharv, the results will be ingested directly into Section 6 to complete the quantitative evaluation.
+The official benchmark suite execution has been completed, and the empirical measurements are fully synchronized into Section 6 and Section 7. These numbers serve as the immutable benchmark reference against which all Checkpoint 3 (CP3) index and query rewrites will be evaluated.

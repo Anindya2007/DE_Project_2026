@@ -520,37 +520,37 @@ The table below establishes the standardized CP2 baseline evaluation matrix. In 
 <!-- BENCHMARK_TABLE_START -->
 | Query | Type | Run 1 (ms) | Run 2 (ms) | Run 3 (ms) | Average (ms) | Median (ms) | Min (ms) | Max (ms) | Scan Type |
 |---|---|---:|---:|---:|---:|---:|---:|---:|---|
-| **R01**: Home feed: latest 30 posts from followed accounts | READ | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* |
-| **R02**: Profile grid: user 217's latest 12 posts | READ | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* |
-| **R03**: Open a profile by username | READ | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* |
-| **R04**: Post page: top-level comments with reply counts | READ | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* |
-| **R05**: Explore: top posts tagged #travel in June 2026 | READ | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* |
-| **R06**: Search bar: prefix/substring match accounts | READ | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* |
-| **R07**: "Liked by": users liking post with follow status | READ | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* |
-| **R08**: "Suggested for you": friends-of-friends graph traversal | READ | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* |
-| **R09**: Follow requests screen: pending requests for account 338 | READ | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* |
-| **R10**: Story highlights: stories by followed accounts in June 2026 | READ | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* |
-| **R11**: Creator insights: engagement rate per follower (top 20) | READ | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* |
-| **R12**: Trending: most used hashtags in late June 2026 | READ | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* |
-| **R13**: Creator tools: comments with zero replies | READ | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* |
-| **R14**: "Not following back": followers not followed back | READ | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* |
-| **R15**: Data quality: accounts with mismatched follower counts | READ | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* |
-| **R16**: Places: posts tagged in Goa during June 2026 | READ | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* |
-| **R17**: Reels team: creator reels > 60s in 2026 | READ | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* |
-| **R18**: Content analytics: daily post volume by type in June 2026 | READ | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* |
-| **R19**: Verified-account report: last post and total likes | READ | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* |
-| **R20**: Content analytics: top 10 most commented posts in June 2026 | READ | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* |
-| **R21**: Creator tools: ghost followers for user 217 | READ | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* |
-| **R22**: Moderation console: hidden comments paginated | READ | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* |
-| **R23**: Like button state: check if user 1042 liked post | READ | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* |
-| **R24**: Story insights: account story views in last 30 days | READ | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* |
-| **W01**: Publish a new photo post | WRITE | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* |
-| **W02**: Double-tap: user 1042 likes post 59689 | WRITE | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* |
-| **W03**: Synchronize post like counter after like | WRITE | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* |
-| **W04**: Nightly batch job: reconcile follower counts | WRITE | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* |
-| **W05**: Housekeeping: delete expired stories before June 2026 | WRITE | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* |
-| **W06**: Bulk accept pending follow requests for account 338 | WRITE | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* | *PENDING* |
-| **Total Workload (Sum of all 30)** | **ALL** | — | — | — | *PENDING* | — | — | — | — |
+| **R01**: Home feed: latest 30 posts from followed accounts | READ | 9.485 | 9.891 | 9.519 | **9.632** | 9.519 | 9.485 | 9.891 | `Seq Scan on posts | Index Scan using follows_pkey on follows` |
+| **R02**: Profile grid: user 217's latest 12 posts | READ | 3.598 | 3.766 | 3.677 | **3.680** | 3.677 | 3.598 | 3.766 | `Seq Scan on posts` |
+| **R03**: Open a profile by username | READ | 0.075 | 0.077 | 0.078 | **0.077** | 0.077 | 0.075 | 0.078 | `Index Scan using uq_users_username on users` |
+| **R04**: Post page: top-level comments with reply counts | READ | 30.416 | 31.104 | 31.128 | **30.883** | 31.104 | 30.416 | 31.128 | `Seq Scan on comments` |
+| **R05**: Explore: top posts tagged #travel in June 2026 | READ | 23.124 | 23.276 | 23.608 | **23.336** | 23.276 | 23.124 | 23.608 | `Seq Scan on post_hashtags | Seq Scan on hashtags | Index Scan using posts_pkey on posts` |
+| **R06**: Search bar: prefix/substring match accounts | READ | 8.648 | 15.455 | 8.696 | **10.933** | 8.696 | 8.648 | 15.455 | `Seq Scan on users` |
+| **R07**: "Liked by": users liking post with follow status | READ | 20.763 | 21.582 | 20.678 | **21.008** | 20.763 | 20.678 | 21.582 | `Seq Scan on likes | Index Scan using users_pkey on users | Index Scan using follows_pkey on follows` |
+| **R08**: "Suggested for you": friends-of-friends graph traversal | READ | 0.308 | 0.337 | 0.309 | **0.318** | 0.309 | 0.308 | 0.337 | `Index Scan using follows_pkey on follows | Index Only Scan using follows_pkey on follows` |
+| **R09**: Follow requests screen: pending requests for account 338 | READ | 4.504 | 4.370 | 4.387 | **4.420** | 4.387 | 4.370 | 4.504 | `Index Scan using follows_pkey on follows | Index Scan using users_pkey on users` |
+| **R10**: Story highlights: stories by followed accounts in June 2026 | READ | 3.853 | 3.911 | 3.800 | **3.855** | 3.853 | 3.800 | 3.911 | `Seq Scan on stories | Index Scan using follows_pkey on follows` |
+| **R11**: Creator insights: engagement rate per follower (top 20) | READ | 9.101 | 9.396 | 9.047 | **9.181** | 9.101 | 9.047 | 9.396 | `Seq Scan on posts | Seq Scan on users` |
+| **R12**: Trending: most used hashtags in late June 2026 | READ | 5.771 | 5.845 | 5.810 | **5.809** | 5.810 | 5.771 | 5.845 | `Seq Scan on posts | Index Only Scan using post_hashtags_pkey on post_hashtags | Seq Scan on hashtags` |
+| **R13**: Creator tools: comments with zero replies | READ | 56.762 | 54.544 | 58.413 | **56.573** | 56.762 | 54.544 | 58.413 | `Seq Scan on comments` |
+| **R14**: "Not following back": followers not followed back | READ | 4.267 | 4.245 | 4.373 | **4.295** | 4.267 | 4.245 | 4.373 | `Index Scan using follows_pkey on follows | Index Only Scan using follows_pkey on follows` |
+| **R15**: Data quality: accounts with mismatched follower counts | READ | 60.797 | 62.176 | 60.620 | **61.198** | 60.797 | 60.620 | 62.176 | `Seq Scan on follows | Seq Scan on users` |
+| **R16**: Places: posts tagged in Goa during June 2026 | READ | 5.442 | 5.513 | 5.714 | **5.556** | 5.513 | 5.442 | 5.714 | `Seq Scan on posts` |
+| **R17**: Reels team: creator reels > 60s in 2026 | READ | 17.827 | 17.122 | 16.673 | **17.207** | 17.122 | 16.673 | 17.827 | `Seq Scan on posts | Index Scan using users_pkey on users | Index Scan using post_media_pkey on post_media` |
+| **R18**: Content analytics: daily post volume by type in June 2026 | READ | 7.752 | 7.833 | 8.007 | **7.864** | 7.833 | 7.752 | 8.007 | `Seq Scan on posts` |
+| **R19**: Verified-account report: last post and total likes | READ | 14133.259 | 13986.487 | 14378.282 | **14166.009** | 14133.259 | 13986.487 | 14378.282 | `Seq Scan on users | Seq Scan on posts | Seq Scan on likes` |
+| **R20**: Content analytics: top 10 most commented posts in June 2026 | READ | 29.383 | 30.540 | 30.043 | **29.989** | 30.043 | 29.383 | 30.540 | `Seq Scan on comments | Seq Scan on posts` |
+| **R21**: Creator tools: ghost followers for user 217 | READ | 62.447 | 10.796 | 9.855 | **27.699** | 10.796 | 9.855 | 62.447 | `Index Scan using follows_pkey on follows | Index Only Scan using likes_pkey on likes | Index Scan using posts_pkey on posts` |
+| **R22**: Moderation console: hidden comments paginated | READ | 7.732 | 7.809 | 8.060 | **7.867** | 7.809 | 7.732 | 8.060 | `Seq Scan on comments` |
+| **R23**: Like button state: check if user 1042 liked post | READ | 0.334 | 0.228 | 0.245 | **0.269** | 0.245 | 0.228 | 0.334 | `Index Only Scan using likes_pkey on likes` |
+| **R24**: Story insights: account story views in last 30 days | READ | 2.605 | 2.604 | 2.589 | **2.599** | 2.604 | 2.589 | 2.605 | `Seq Scan on stories` |
+| **W01**: Publish a new photo post | WRITE | 0.573 | 0.586 | 0.605 | **0.588** | 0.586 | 0.573 | 0.605 | `(no scan)` |
+| **W02**: Double-tap: user 1042 likes post 59689 | WRITE | 3.005 | 0.675 | 0.695 | **1.458** | 0.695 | 0.675 | 3.005 | `(no scan)` |
+| **W03**: Synchronize post like counter after like | WRITE | 1.887 | 0.293 | 0.293 | **0.824** | 0.293 | 0.293 | 1.887 | `Index Scan using posts_pkey on posts` |
+| **W04**: Nightly batch job: reconcile follower counts | WRITE | 179.314 | 180.456 | 158.121 | **172.630** | 179.314 | 158.121 | 180.456 | `Seq Scan on users | Seq Scan on follows` |
+| **W05**: Housekeeping: delete expired stories before June 2026 | WRITE | 18.609 | 18.184 | 20.009 | **18.934** | 18.609 | 18.184 | 20.009 | `Seq Scan on stories` |
+| **W06**: Bulk accept pending follow requests for account 338 | WRITE | 6.997 | 4.819 | 4.794 | **5.537** | 4.819 | 4.794 | 6.997 | `Index Scan using follows_pkey on follows` |
+| **Total Workload (Sum of all 30)** | **ALL** | — | — | — | **14710.228** | — | — | — | — |
 <!-- BENCHMARK_TABLE_END -->
 
 ---

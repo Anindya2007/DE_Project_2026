@@ -558,12 +558,30 @@ The table below establishes the standardized CP2 baseline evaluation matrix. In 
 ## 7. Performance Bottleneck Analysis Framework
 
 <!-- RANKINGS_START -->
-> [!NOTE]
-> **Awaiting Official Benchmark Execution**  
-> Complete rankings and empirical execution latencies will be automatically calculated and ranked by `benchmarks/analyze_baseline.py` once Atharv runs the benchmark on the shared Neon database.
+### 7.1 Empirical Ranking Tables
+
+#### Top 5 Slowest Baseline Queries (Primary Bottlenecks)
+
+| Rank | Query ID | Category | Avg Latency (ms) | Median (ms) | Dominant Scan Nodes | Root Cause Bottleneck |
+|:---:|---|---|---:|---:|---|---|
+| **1** | **R19**: Verified Accounts Lifetime Report | READ | **14,166.009** | 14,133.259 | `Seq Scan on users \| Seq Scan on posts \| Seq Scan on likes` | Correlated scalar subqueries looping 294 times; scans 420k likes and 60k posts per loop (1.13M shared buffer hits) |
+| **2** | **W04**: Nightly Follower Count Reconciliation | WRITE | **172.630** | 179.314 | `Seq Scan on users \| Seq Scan on follows` | Full hash outer join across 258k follows and 30k users with complete aggregation, followed by ~1,200 heap updates |
+| **3** | **R15**: Follower Count Discrepancy Audit | READ | **61.198** | 60.797 | `Seq Scan on follows \| Seq Scan on users` | Hash join over 258k follows without `followee_id` index; unindexed aggregation across entire user base |
+| **4** | **R13**: Creator Tools: Zero-Reply Comments | READ | **56.573** | 56.762 | `Seq Scan on comments` | Full sequential scan of 150k comments with `NOT IN NULL` logic flaw returning 0 rows |
+| **5** | **R04**: Post Page Comments with Reply Counts | READ | **30.883** | 31.104 | `Seq Scan on comments` | Unindexed self-join over 150k comments filtering `post_id = 59689` via full sequential scan |
+
+#### Top 5 Fastest Baseline Queries
+
+| Rank | Query ID | Category | Avg Latency (ms) | Median (ms) | Dominant Scan Nodes | Architectural Efficiency Factor |
+|:---:|---|---|---:|---:|---|---|
+| **1** | **R03**: Open Profile by Username | READ | **0.077** | 0.077 | `Index Scan using uq_users_username on users` | Single-tuple B-tree point lookup on unique constraint; 3 buffer page accesses |
+| **2** | **R23**: Like Button State Lookup | READ | **0.269** | 0.245 | `Index Only Scan using likes_pkey on likes` | Covered index-only scan on composite primary key `(user_id, post_id)` |
+| **3** | **R08**: Suggested Accounts (2nd-degree) | READ | **0.318** | 0.309 | `Index Scan using follows_pkey on follows` | Fast leading-key traversal on `follows_pkey(follower_id)` with small candidate fan-out |
+| **4** | **W01**: Publish New Photo Post | WRITE | **0.588** | 0.586 | `(no scan)` | Single heap tuple append with fast unique constraint check on unindexed table |
+| **5** | **W03**: Increment Post Like Counter | WRITE | **0.824** | 0.293 | `Index Scan using posts_pkey on posts` | Point tuple update directly addressed via `posts_pkey` |
 <!-- RANKINGS_END -->
 
-### 7.1 Expected Slowest Queries (Hypothesized Bottlenecks)
+### 7.2 Deep-Dive Analysis of the Slowest Queries
 Based on relational complexity, relational algebra, and cardinality scans:
 1. **`R19` (Verified Account Report):** Correlated subqueries executing an unindexed join over `likes` (420k rows) and `posts` (60k rows) for every verified user.
 2. **`W04` (Follower Count Reconciliation):** Full outer join and aggregation over 258,588 follow records and 30,000 user rows, followed by ~1,200 heap updates.
@@ -571,13 +589,13 @@ Based on relational complexity, relational algebra, and cardinality scans:
 4. **`R15` (Follower Count Discrepancy Audit):** Full table scans on `users` and `follows` with complete hash aggregation.
 5. **`R07` / `R08` / `R09` (Social Graph Traversals):** Lack of index on `follows(followee_id)` forces 258,588 row sequential scans.
 
-### 7.2 Expected Fastest Queries
+### 7.3 Deep-Dive Analysis of the Fastest Queries
 1. **`R23` (Like Button State):** Point lookup using composite primary key index `likes_pkey (user_id, post_id)` via `Index Only Scan`.
 2. **`R03` (Profile by Username):** Point lookup using unique B-tree index `uq_users_username`.
 3. **`W01` / `W02` (Single Row Inserts):** Direct append to table heaps with single PK check.
 4. **`W03` (Single Post Counter Increment):** Direct single-tuple update via `posts_pkey`.
 
-### 7.3 Buffer Pool Hierarchy & Memory Impact
+### 7.4 Buffer Pool Hierarchy & Memory Impact
 In un-indexed baseline configurations:
 - **Shared Hit vs Shared Read:** Initial query runs will exhibit high `shared read` counts as 1.2M rows are pulled from remote storage into local Neon / PostgreSQL buffer cache. Subsequent runs will transition to `shared hit`.
 - **Buffer Bloat:** Sequential scans over `likes` (419,954 rows) and `follows` (258,588 rows) will repeatedly flush active working sets from the PostgreSQL buffer ring buffer.

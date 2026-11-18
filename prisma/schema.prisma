@@ -140,6 +140,4 @@ model users {
   @@schema("instagram")
 }
 
-  @@index([status])
-  @@map("rides")
-}
+  

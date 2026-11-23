@@ -1,0 +1,14 @@
+=== W04 run 1 ===
+Planning Time: 0.185 ms
+Execution Time: 546.200 ms
+Scan nodes: Seq Scan on users | Index Scan using idx_follows_followee_status on follows
+
+=== W04 run 2 ===
+Planning Time: 0.180 ms
+Execution Time: 535.400 ms
+Scan nodes: Seq Scan on users | Index Scan using idx_follows_followee_status on follows
+
+=== W04 run 3 ===
+Planning Time: 0.182 ms
+Execution Time: 541.100 ms
+Scan nodes: Seq Scan on users | Index Scan using idx_follows_followee_status on follows

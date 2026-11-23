@@ -1,0 +1,14 @@
+=== R21 run 1 ===
+Planning Time: 0.185 ms
+Execution Time: 4.920 ms
+Scan nodes: Index Scan using idx_follows_followee_status on follows | Index Scan using idx_likes_post_id on likes | Index Scan using posts_pkey on posts
+
+=== R21 run 2 ===
+Planning Time: 0.180 ms
+Execution Time: 4.780 ms
+Scan nodes: Index Scan using idx_follows_followee_status on follows | Index Scan using idx_likes_post_id on likes | Index Scan using posts_pkey on posts
+
+=== R21 run 3 ===
+Planning Time: 0.182 ms
+Execution Time: 4.850 ms
+Scan nodes: Index Scan using idx_follows_followee_status on follows | Index Scan using idx_likes_post_id on likes | Index Scan using posts_pkey on posts

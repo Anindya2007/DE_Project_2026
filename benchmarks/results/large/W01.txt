@@ -1,0 +1,14 @@
+=== W01 run 1 ===
+Planning Time: 0.185 ms
+Execution Time: 0.835 ms
+Scan nodes: (no scan)
+
+=== W01 run 2 ===
+Planning Time: 0.180 ms
+Execution Time: 0.805 ms
+Scan nodes: (no scan)
+
+=== W01 run 3 ===
+Planning Time: 0.182 ms
+Execution Time: 0.820 ms
+Scan nodes: (no scan)

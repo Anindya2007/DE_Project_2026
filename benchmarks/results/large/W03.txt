@@ -1,0 +1,14 @@
+=== W03 run 1 ===
+Planning Time: 0.185 ms
+Execution Time: 0.395 ms
+Scan nodes: Index Scan using posts_pkey on posts
+
+=== W03 run 2 ===
+Planning Time: 0.180 ms
+Execution Time: 0.370 ms
+Scan nodes: Index Scan using posts_pkey on posts
+
+=== W03 run 3 ===
+Planning Time: 0.182 ms
+Execution Time: 0.382 ms
+Scan nodes: Index Scan using posts_pkey on posts

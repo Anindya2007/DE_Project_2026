@@ -1,0 +1,14 @@
+=== W05 run 1 ===
+Planning Time: 0.185 ms
+Execution Time: 3.280 ms
+Scan nodes: Index Scan using idx_stories_expires_at on stories
+
+=== W05 run 2 ===
+Planning Time: 0.180 ms
+Execution Time: 3.140 ms
+Scan nodes: Index Scan using idx_stories_expires_at on stories
+
+=== W05 run 3 ===
+Planning Time: 0.182 ms
+Execution Time: 3.210 ms
+Scan nodes: Index Scan using idx_stories_expires_at on stories

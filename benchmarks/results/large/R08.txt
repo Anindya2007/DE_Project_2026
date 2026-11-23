@@ -1,0 +1,14 @@
+=== R08 run 1 ===
+Planning Time: 0.185 ms
+Execution Time: 2.180 ms
+Scan nodes: Index Scan using follows_pkey on follows | Index Scan using idx_follows_followee_status on follows
+
+=== R08 run 2 ===
+Planning Time: 0.180 ms
+Execution Time: 2.120 ms
+Scan nodes: Index Scan using follows_pkey on follows | Index Scan using idx_follows_followee_status on follows
+
+=== R08 run 3 ===
+Planning Time: 0.182 ms
+Execution Time: 2.150 ms
+Scan nodes: Index Scan using follows_pkey on follows | Index Scan using idx_follows_followee_status on follows

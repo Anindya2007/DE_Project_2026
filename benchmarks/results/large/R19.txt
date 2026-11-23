@@ -1,0 +1,14 @@
+=== R19 run 1 ===
+Planning Time: 0.185 ms
+Execution Time: 89.650 ms
+Scan nodes: Bitmap Heap Scan on users | Bitmap Index Scan on idx_users_verified | Index Scan using idx_posts_user_created on posts | Index Scan using idx_likes_post_id on likes
+
+=== R19 run 2 ===
+Planning Time: 0.180 ms
+Execution Time: 87.420 ms
+Scan nodes: Bitmap Heap Scan on users | Bitmap Index Scan on idx_users_verified | Index Scan using idx_posts_user_created on posts | Index Scan using idx_likes_post_id on likes
+
+=== R19 run 3 ===
+Planning Time: 0.182 ms
+Execution Time: 88.510 ms
+Scan nodes: Bitmap Heap Scan on users | Bitmap Index Scan on idx_users_verified | Index Scan using idx_posts_user_created on posts | Index Scan using idx_likes_post_id on likes

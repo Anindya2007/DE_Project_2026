@@ -1,0 +1,14 @@
+=== R17 run 1 ===
+Planning Time: 0.185 ms
+Execution Time: 0.320 ms
+Scan nodes: Index Scan using idx_posts_reels_2026 on posts | Index Scan using post_media_pkey on post_media | Index Scan using users_pkey on users
+
+=== R17 run 2 ===
+Planning Time: 0.180 ms
+Execution Time: 0.302 ms
+Scan nodes: Index Scan using idx_posts_reels_2026 on posts | Index Scan using post_media_pkey on post_media | Index Scan using users_pkey on users
+
+=== R17 run 3 ===
+Planning Time: 0.182 ms
+Execution Time: 0.312 ms
+Scan nodes: Index Scan using idx_posts_reels_2026 on posts | Index Scan using post_media_pkey on post_media | Index Scan using users_pkey on users

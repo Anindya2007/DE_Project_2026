@@ -1,0 +1,14 @@
+=== R11 run 1 ===
+Planning Time: 0.185 ms
+Execution Time: 28.750 ms
+Scan nodes: Bitmap Heap Scan on posts | Bitmap Index Scan on idx_posts_created_at | Index Scan using idx_users_creators on users
+
+=== R11 run 2 ===
+Planning Time: 0.180 ms
+Execution Time: 28.320 ms
+Scan nodes: Bitmap Heap Scan on posts | Bitmap Index Scan on idx_posts_created_at | Index Scan using idx_users_creators on users
+
+=== R11 run 3 ===
+Planning Time: 0.182 ms
+Execution Time: 28.520 ms
+Scan nodes: Bitmap Heap Scan on posts | Bitmap Index Scan on idx_posts_created_at | Index Scan using idx_users_creators on users

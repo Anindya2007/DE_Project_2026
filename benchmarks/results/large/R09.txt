@@ -1,0 +1,14 @@
+=== R09 run 1 ===
+Planning Time: 0.185 ms
+Execution Time: 0.068 ms
+Scan nodes: Index Scan using idx_follows_pending on follows | Index Scan using users_pkey on users
+
+=== R09 run 2 ===
+Planning Time: 0.180 ms
+Execution Time: 0.062 ms
+Scan nodes: Index Scan using idx_follows_pending on follows | Index Scan using users_pkey on users
+
+=== R09 run 3 ===
+Planning Time: 0.182 ms
+Execution Time: 0.065 ms
+Scan nodes: Index Scan using idx_follows_pending on follows | Index Scan using users_pkey on users

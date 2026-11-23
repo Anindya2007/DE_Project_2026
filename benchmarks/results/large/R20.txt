@@ -1,0 +1,14 @@
+=== R20 run 1 ===
+Planning Time: 0.185 ms
+Execution Time: 55.400 ms
+Scan nodes: Bitmap Heap Scan on posts | Bitmap Index Scan on idx_posts_created_at | Index Scan using idx_comments_post_id on comments
+
+=== R20 run 2 ===
+Planning Time: 0.180 ms
+Execution Time: 53.850 ms
+Scan nodes: Bitmap Heap Scan on posts | Bitmap Index Scan on idx_posts_created_at | Index Scan using idx_comments_post_id on comments
+
+=== R20 run 3 ===
+Planning Time: 0.182 ms
+Execution Time: 54.620 ms
+Scan nodes: Bitmap Heap Scan on posts | Bitmap Index Scan on idx_posts_created_at | Index Scan using idx_comments_post_id on comments

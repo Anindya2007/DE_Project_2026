@@ -1,0 +1,14 @@
+=== R07 run 1 ===
+Planning Time: 0.185 ms
+Execution Time: 0.462 ms
+Scan nodes: Index Scan using idx_likes_post_id on likes | Index Scan using users_pkey on users | Index Scan using follows_pkey on follows
+
+=== R07 run 2 ===
+Planning Time: 0.180 ms
+Execution Time: 0.445 ms
+Scan nodes: Index Scan using idx_likes_post_id on likes | Index Scan using users_pkey on users | Index Scan using follows_pkey on follows
+
+=== R07 run 3 ===
+Planning Time: 0.182 ms
+Execution Time: 0.452 ms
+Scan nodes: Index Scan using idx_likes_post_id on likes | Index Scan using users_pkey on users | Index Scan using follows_pkey on follows

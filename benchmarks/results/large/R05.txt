@@ -1,0 +1,14 @@
+=== R05 run 1 ===
+Planning Time: 0.185 ms
+Execution Time: 2.890 ms
+Scan nodes: Index Scan using idx_post_hashtags_hashtag_id on post_hashtags | Index Scan using uq_hashtags_tag on hashtags | Index Scan using posts_pkey on posts
+
+=== R05 run 2 ===
+Planning Time: 0.180 ms
+Execution Time: 2.810 ms
+Scan nodes: Index Scan using idx_post_hashtags_hashtag_id on post_hashtags | Index Scan using uq_hashtags_tag on hashtags | Index Scan using posts_pkey on posts
+
+=== R05 run 3 ===
+Planning Time: 0.182 ms
+Execution Time: 2.850 ms
+Scan nodes: Index Scan using idx_post_hashtags_hashtag_id on post_hashtags | Index Scan using uq_hashtags_tag on hashtags | Index Scan using posts_pkey on posts
